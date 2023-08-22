@@ -814,6 +814,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
   m_PrefabInstance: {fileID: 123451121}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &384907731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2187514415020032400, guid: a3c935debbd8e6f4abf50e1a37253cca, type: 3}
+  m_PrefabInstance: {fileID: 2187514415820278277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &384907736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384907731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4002225107ba0b4795d180046da3006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2064017773}
+  visionRange: 20
+  proximityLimit: 3
+  lookHeightAdjustment: 3
 --- !u!1001 &425315307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1758,6 +1779,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3371228109461426012, guid: a6589de99de69484899191dc789ccb81, type: 3}
   m_PrefabInstance: {fileID: 524107182}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &946544364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2187514415695789153, guid: a3c935debbd8e6f4abf50e1a37253cca, type: 3}
+  m_PrefabInstance: {fileID: 2187514415820278277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &946544369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946544364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4002225107ba0b4795d180046da3006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2064017773}
+  visionRange: 20
+  proximityLimit: 3
+  lookHeightAdjustment: 3
 --- !u!4 &958768752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
@@ -3992,14 +4034,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2064017773}
-    - target: {fileID: 2187514415331137477, guid: a3c935debbd8e6f4abf50e1a37253cca, type: 3}
-      propertyPath: visionRange
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2187514415331137477, guid: a3c935debbd8e6f4abf50e1a37253cca, type: 3}
-      propertyPath: proximityLimit
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c935debbd8e6f4abf50e1a37253cca, type: 3}
 --- !u!1001 &3371228110666932871

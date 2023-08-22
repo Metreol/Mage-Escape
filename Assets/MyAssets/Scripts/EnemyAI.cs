@@ -20,13 +20,13 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         distanceToTarget = Vector3.Distance(transform.position, target.position);
-        if (distanceToTarget < visionRange && distanceToTarget > proximityLimit)
-        {
-            navMeshAgent.SetDestination(target.position);
-        } 
-        else
+        if (distanceToTarget <= proximityLimit)
         {
             navMeshAgent.SetDestination(transform.position);
+        }
+        else if (distanceToTarget < visionRange)
+        {
+            navMeshAgent.SetDestination(target.position);
         }
     }
 }
