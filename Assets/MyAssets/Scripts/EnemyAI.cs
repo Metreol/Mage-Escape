@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float visionRange = 10f;
-    [SerializeField] private float proximityLimit = 1f;
+    [SerializeField] private float detectionRange = 10f;
+    [SerializeField] private float attackRange = 3f;
 
     private NavMeshAgent navMeshAgent;
     private float distanceToTarget = float.MaxValue;
@@ -20,21 +20,41 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         distanceToTarget = Vector3.Distance(transform.position, target.position);
-        if (distanceToTarget <= proximityLimit)
+        if (distanceToTarget < detectionRange)
         {
-            navMeshAgent.SetDestination(transform.position);
+            EngageTarget();
         }
-        else if (distanceToTarget < visionRange)
+    }
+
+    private void EngageTarget()
+    {
+        if (distanceToTarget < attackRange)
         {
-            navMeshAgent.SetDestination(target.position);
+            AttackTarget();
         }
+        else
+        {
+            ChaseTarget();
+        }
+    }
+
+    private void ChaseTarget()
+    {
+        Debug.Log($"{name} is CHASING {target.name}!");
+        navMeshAgent.SetDestination(target.position);
+    }
+
+    private void AttackTarget()
+    {
+        Debug.Log($"{name} is ATTACKING {target.name}!");
+        navMeshAgent.SetDestination(transform.position);
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, proximityLimit);
+        Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, visionRange);
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }
