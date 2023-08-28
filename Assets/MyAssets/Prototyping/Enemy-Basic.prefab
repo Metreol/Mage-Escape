@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 2187514415020032412}
   - component: {fileID: 2187514415020032413}
   - component: {fileID: 2187514415020032402}
+  - component: {fileID: 384907736}
   m_Layer: 0
   m_Name: L-Eye
   m_TagString: Untagged
@@ -325,6 +326,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &384907736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187514415020032400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4002225107ba0b4795d180046da3006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  visionRange: 20
+  lookHeightAdjustment: 3
 --- !u!1 &2187514415331137471
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,8 +478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  visionRange: 20
-  proximityLimit: 3
+  detectionRange: 30
+  attackRange: 3
 --- !u!1 &2187514415695789153
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +492,7 @@ GameObject:
   - component: {fileID: 2187514415695789165}
   - component: {fileID: 2187514415695789154}
   - component: {fileID: 2187514415695789155}
+  - component: {fileID: 946544369}
   m_Layer: 0
   m_Name: R-Eye
   m_TagString: Untagged
@@ -562,6 +579,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &946544369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187514415695789153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4002225107ba0b4795d180046da3006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  visionRange: 20
+  lookHeightAdjustment: 3
 --- !u!1 &5267625664715465509
 GameObject:
   m_ObjectHideFlags: 0
