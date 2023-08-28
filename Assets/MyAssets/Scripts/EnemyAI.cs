@@ -40,13 +40,13 @@ public class EnemyAI : MonoBehaviour
 
     private void ChaseTarget()
     {
-        Debug.Log($"{name} is CHASING {target.name}!");
+        //Debug.Log($"{name} is CHASING {target.name}!");
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
-        Debug.Log($"{name} is ATTACKING {target.name}!");
+        //Debug.Log($"{name} is ATTACKING {target.name}!");
         navMeshAgent.SetDestination(transform.position);
     }
 
