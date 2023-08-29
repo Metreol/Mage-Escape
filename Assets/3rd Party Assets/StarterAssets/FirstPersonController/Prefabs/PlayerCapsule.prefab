@@ -144,7 +144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraFP: {fileID: 2328871403100643112}
   range: 100
-  hitMarker: {fileID: 3371228109461426000, guid: a6589de99de69484899191dc789ccb81, type: 3}
+  damage: 10
+  magicEffect: {fileID: 5559713182700508514, guid: 9d4860f2aef0f03448786084e9f87699, type: 3}
+  particleSystemParent: {fileID: 881357457}
 --- !u!1 &4135013735270702863
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.75
+      value: 2.749999
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.z
