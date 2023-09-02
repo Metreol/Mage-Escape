@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5559713182700508514}
   - component: {fileID: 3300536748301165836}
   m_Layer: 0
-  m_Name: Basic Damage VFX
+  m_Name: Green Projectile VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &483956532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483956533}
+  m_Layer: 8
+  m_Name: Flare Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &483956533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483956532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: -0.13, z: 0.509}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2065246764}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881357456
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +94,8 @@ Transform:
   m_LocalPosition: {x: 0.14, y: -0.05, z: 0.27}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 483956533}
   m_Father: {fileID: 881357457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -10.03, y: -11.9, z: -9.85}
@@ -145,7 +177,8 @@ MonoBehaviour:
   cameraFP: {fileID: 2328871403100643112}
   range: 100
   damage: 10
-  magicEffect: {fileID: 5559713182700508514, guid: 9d4860f2aef0f03448786084e9f87699, type: 3}
+  weaponFlareVFX: {fileID: 5559713182700508514, guid: 2f3386ad78ea09b42bdd5a41f9203e40, type: 3}
+  magicCollisionVFX: {fileID: 6932861738656277180, guid: 0c405a8baa97a314f9692487e992bb34, type: 3}
   particleSystemParent: {fileID: 881357457}
 --- !u!1 &4135013735270702863
 GameObject:

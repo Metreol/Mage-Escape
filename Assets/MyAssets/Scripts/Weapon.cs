@@ -7,7 +7,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Camera cameraFP;
     [SerializeField] private float range = 100f;
     [SerializeField] private float damage = 10f;
-    [SerializeField] private ParticleSystem magicEffect;
+    [SerializeField] private ParticleSystem weaponFlareVFX;
+    [SerializeField] private Transform magicCollisionVFX;
     [SerializeField] private Transform particleSystemParent;
 
     // Update is called once per frame
@@ -22,11 +23,10 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
-        //Debug.Log("Attempted shot");
-        MagicVFX();
+        WeaponFlareVFX();
         if (Physics.Raycast(cameraFP.transform.position, cameraFP.transform.forward, out RaycastHit hit, range))
         {
-            Debug.Log($"Hit {hit.transform.name} at {hit.transform.position}.");
+            CollisionVFX(hit.point);
             if (hit.transform.TryGetComponent<EnemyHealth>(out var enemy))
             {
                 enemy.DecreaseHealth(damage);
@@ -35,8 +35,13 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void MagicVFX()
+    private void WeaponFlareVFX()
     {
-        Instantiate(magicEffect, particleSystemParent.position + particleSystemParent.forward, particleSystemParent.rotation, particleSystemParent).Play();
+        Instantiate(weaponFlareVFX, particleSystemParent.position, particleSystemParent.rotation, particleSystemParent).Play();
+    }
+
+    private void CollisionVFX(Vector3 collisionPoint)
+    {
+        Instantiate(magicCollisionVFX, collisionPoint, Quaternion.identity, particleSystemParent);
     }
 }
