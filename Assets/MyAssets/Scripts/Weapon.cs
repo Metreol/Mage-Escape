@@ -14,8 +14,7 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetButtonDown("Fire1"))
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
@@ -42,6 +41,6 @@ public class Weapon : MonoBehaviour
 
     private void CollisionVFX(Vector3 collisionPoint)
     {
-        Instantiate(magicCollisionVFX, collisionPoint, Quaternion.identity, particleSystemParent);
+        Instantiate(magicCollisionVFX, collisionPoint, Quaternion.identity);
     }
 }

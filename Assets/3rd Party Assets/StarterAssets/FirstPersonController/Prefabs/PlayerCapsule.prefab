@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483956532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -0.13, z: 0.509}
+  m_LocalPosition: {x: -0.67, y: 0.42, z: 0.512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -179,7 +179,7 @@ MonoBehaviour:
   damage: 10
   weaponFlareVFX: {fileID: 5559713182700508514, guid: 2f3386ad78ea09b42bdd5a41f9203e40, type: 3}
   magicCollisionVFX: {fileID: 6932861738656277180, guid: 0c405a8baa97a314f9692487e992bb34, type: 3}
-  particleSystemParent: {fileID: 881357457}
+  particleSystemParent: {fileID: 483956533}
 --- !u!1 &4135013735270702863
 GameObject:
   m_ObjectHideFlags: 0
