@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();   
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -23,6 +23,10 @@ public class EnemyAI : MonoBehaviour
         if (distanceToTarget < detectionRange)
         {
             EngageTarget();
+        }
+        else if (navMeshAgent.velocity.magnitude < 0.1f)
+        {
+            GetComponent<Animator>().SetTrigger("Idle");
         }
     }
 
@@ -40,13 +44,14 @@ public class EnemyAI : MonoBehaviour
 
     private void ChaseTarget()
     {
-        //Debug.Log($"{name} is CHASING {target.name}!");
+        GetComponent<Animator>().SetBool("Attack", false);
+        GetComponent<Animator>().SetTrigger("Move");
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
-        //Debug.Log($"{name} is ATTACKING {target.name}!");
+        GetComponent<Animator>().SetBool("Attack", true);
         navMeshAgent.SetDestination(transform.position);
     }
 
