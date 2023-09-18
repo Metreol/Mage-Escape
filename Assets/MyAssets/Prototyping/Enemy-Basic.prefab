@@ -239,7 +239,6 @@ GameObject:
   - component: {fileID: 2187514415020032412}
   - component: {fileID: 2187514415020032413}
   - component: {fileID: 2187514415020032402}
-  - component: {fileID: 384907736}
   m_Layer: 0
   m_Name: L-Eye
   m_TagString: Untagged
@@ -326,21 +325,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &384907736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2187514415020032400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4002225107ba0b4795d180046da3006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  visionRange: 20
-  lookHeightAdjustment: 3
 --- !u!1 &2187514415331137471
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,9 +338,11 @@ GameObject:
   - component: {fileID: 2187514415331137464}
   - component: {fileID: 2187514415331137465}
   - component: {fileID: 2187514415331137470}
+  - component: {fileID: 6156982442361138771}
   - component: {fileID: 2187514415331137477}
   - component: {fileID: 1736466917}
-  - component: {fileID: 6156982442361138771}
+  - component: {fileID: -1045813471549183724}
+  - component: {fileID: 1440799780796903118}
   m_Layer: 0
   m_Name: Enemy-Basic
   m_TagString: Untagged
@@ -467,34 +453,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2187514415331137477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2187514415331137471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2847dda0cd8c6c479aa99c263c2eab3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  detectionRange: 30
-  attackRange: 3
---- !u!114 &1736466917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2187514415331137471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 297cd4309eb654d40a746f383bf5a65c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalHealth: 30
 --- !u!95 &6156982442361138771
 Animator:
   serializedVersion: 5
@@ -516,6 +474,65 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2187514415331137477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187514415331137471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2847dda0cd8c6c479aa99c263c2eab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  detectionRange: 30
+  attackRange: 3
+  turnSpeed: 6
+--- !u!114 &1736466917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187514415331137471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297cd4309eb654d40a746f383bf5a65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 30
+--- !u!114 &-1045813471549183724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187514415331137471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e9dadc0229bfd46965a32cbc9048cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 40
+--- !u!114 &1440799780796903118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187514415331137471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4002225107ba0b4795d180046da3006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionRange: 20
+  lookHeightAdjustment: 3
+  watchers:
+  - {fileID: 2187514415020032403}
+  - {fileID: 2187514415695789152}
 --- !u!1 &2187514415695789153
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +545,6 @@ GameObject:
   - component: {fileID: 2187514415695789165}
   - component: {fileID: 2187514415695789154}
   - component: {fileID: 2187514415695789155}
-  - component: {fileID: 946544369}
   m_Layer: 0
   m_Name: R-Eye
   m_TagString: Untagged
@@ -615,21 +631,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &946544369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2187514415695789153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4002225107ba0b4795d180046da3006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  visionRange: 20
-  lookHeightAdjustment: 3
 --- !u!1 &5267625664715465509
 GameObject:
   m_ObjectHideFlags: 0
