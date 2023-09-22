@@ -1,22 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform target;
     [SerializeField] private float detectionRange = 10f;
     [SerializeField] private float attackRange = 3f;
     [SerializeField] private float turnSpeed = 10f;
 
+    public Transform target;
+
     private NavMeshAgent navMeshAgent;
+    private Animator animator;
     private float distanceToTarget = float.MaxValue;
+    private bool provoked = false;
+
 
     void Start()
     {
         PlayerHealth[] players = FindObjectsOfType<PlayerHealth>();
+        GetComponent<EnemyHealth>().OnDamageTaken += EnemyAI_OnDamageTaken;
+        animator = GetComponent<Animator>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+
         switch (players.Length)
         {
             case 0:
@@ -33,46 +43,55 @@ public class EnemyAI : MonoBehaviour
                 UnityEditor.EditorApplication.isPlaying = false; // For running in editor
                 break;
         }
-        navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+
+    private void EnemyAI_OnDamageTaken(object sender, System.EventArgs e)
+    {
+        this.provoked = true;
+        Debug.Log("PROVOKED");
     }
 
     void Update()
     {
         distanceToTarget = Vector3.Distance(transform.position, target.position);
-        if (distanceToTarget < detectionRange)
+        
+        if (provoked || distanceToTarget < detectionRange)
         {
-            EngageTarget();
+            if (distanceToTarget > attackRange)
+            {
+                ChaseTarget();
+            }
+            else
+            {
+                AttackTarget();
+            }
+            provoked = false;
         }
-        else if (navMeshAgent.velocity.magnitude < 0.1f)
+        else if (Vector3.Distance(transform.position, navMeshAgent.destination) < navMeshAgent.stoppingDistance
+            && navMeshAgent.velocity.magnitude < 0.01f)
         {
-            GetComponent<Animator>().SetTrigger("Idle");
+            Idle();
         }
     }
 
-    private void EngageTarget()
+    private void Idle()
     {
-        if (distanceToTarget < attackRange)
-        {
-            AttackTarget();
-        }
-        else
-        {
-            ChaseTarget();
-        }
+        navMeshAgent.SetDestination(transform.position);
+        animator.SetBool("Move", false);
     }
 
     private void ChaseTarget()
     {
-        GetComponent<Animator>().SetBool("Attack", false);
-        GetComponent<Animator>().SetTrigger("Move");
+        animator.SetBool("Attack", false);
+        animator.SetBool("Move", true);
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
-        GetComponent<Animator>().SetBool("Attack", true);
-        FaceTarget();
         navMeshAgent.SetDestination(transform.position);
+        animator.SetBool("Attack", true);
+        FaceTarget();
     }
 
     private void FaceTarget()

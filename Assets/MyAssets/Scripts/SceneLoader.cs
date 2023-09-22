@@ -10,7 +10,7 @@ public class SceneLoader : MonoBehaviour
     private void SceneSetup()
     {
         Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
