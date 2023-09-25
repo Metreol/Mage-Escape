@@ -11,12 +11,27 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform magicCollisionVFX;
     [SerializeField] private Transform particleSystemParent;
 
+    private Ammo ammoSlot;
+
+    private void Start()
+    {
+        ammoSlot = GetComponent<Ammo>();
+
+        if (ammoSlot.Count() > ammoSlot.Capacity())
+        {
+            ammoSlot.FullyRestoreAmmo();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (ammoSlot.Count() > 0)
+            {
+                Shoot();
+            }
         }
     }
 
@@ -32,6 +47,7 @@ public class Weapon : MonoBehaviour
             }
 
         }
+        ammoSlot.ReduceAmmo();
     }
 
     private void WeaponFlareVFX()
