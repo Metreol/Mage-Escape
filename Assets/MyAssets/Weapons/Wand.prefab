@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8949741905434859498}
   - component: {fileID: 8949741905434859497}
   - component: {fileID: 8949741904687020279}
-  - component: {fileID: 4437204810647790385}
+  - component: {fileID: 4490978643217211121}
   m_Layer: 8
   m_Name: Wand
   m_TagString: Untagged
@@ -143,13 +143,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462e86db5884a6c40bcc93c21e1b56aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraFP: {fileID: 0}
-  range: 100
+  ammoType: 1
   damage: 20
+  range: 100
+  shotDelayInSecs: 0.5
   weaponFlareVFX: {fileID: 5559713182700508514, guid: 2f3386ad78ea09b42bdd5a41f9203e40, type: 3}
   magicCollisionVFX: {fileID: 6932861738656277180, guid: 0c405a8baa97a314f9692487e992bb34, type: 3}
   particleSystemParent: {fileID: 8949741903929076465}
---- !u!114 &4437204810647790385
+  firstPersonCam: {fileID: 0}
+--- !u!114 &4490978643217211121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,8 +160,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8949741905434859503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cde8c39de51849960903f0abfc02e, type: 3}
+  m_Script: {fileID: 11500000, guid: afbbfe15713377a46973fb7b49f518cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCapacity: 50
-  ammoCount: 50
+  virtualCam: {fileID: 0}
+  fpController: {fileID: 0}
+  zoomFOV: 20
+  defaultFOV: 40
+  zoomRate: 60
+  zoomRotationSpeed: 1
+  defaultRotationSpeed: 4

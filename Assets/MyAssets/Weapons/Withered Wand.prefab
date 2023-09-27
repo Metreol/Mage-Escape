@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 8949741905434859498}
   - component: {fileID: 8949741905434859497}
   - component: {fileID: 8949741904687020279}
-  - component: {fileID: -6988510014941087239}
   m_Layer: 8
   m_Name: Withered Wand
   m_TagString: Untagged
@@ -143,23 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462e86db5884a6c40bcc93c21e1b56aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraFP: {fileID: 0}
-  range: 75
+  ammoType: 0
   damage: 10
+  range: 75
+  shotDelayInSecs: 0.5
   weaponFlareVFX: {fileID: 5559713182700508514, guid: 4e4550e156ba63b44a12a3ce5fcdd4a6, type: 3}
   magicCollisionVFX: {fileID: 6932861738656277180, guid: 66ccbdc861927d240ada9adb0dd5e0fe, type: 3}
   particleSystemParent: {fileID: 8949741903929076465}
---- !u!114 &-6988510014941087239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8949741905434859503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cde8c39de51849960903f0abfc02e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoCapacity: 100
-  ammoCount: 100
+  firstPersonCam: {fileID: 0}

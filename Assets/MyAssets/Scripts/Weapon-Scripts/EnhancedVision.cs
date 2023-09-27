@@ -8,26 +8,31 @@ using UnityEngine.InputSystem;
 public class EnhancedVision : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera virtualCam;
+    [SerializeField] private FirstPersonController fpController;
     [SerializeField] private float zoomFOV = 20f;
     [SerializeField] private float defaultFOV = 40f;
     [SerializeField] private float zoomRate = 60f;
     [SerializeField] private float zoomRotationSpeed = 1f;
     [SerializeField] private float defaultRotationSpeed = 4f;
 
-    private FirstPersonController fpController;
+    private void OnDisable()
+    {
+        virtualCam.m_Lens.FieldOfView = defaultFOV;
+    }
 
-
-    // Start is called before the first frame update
     void Start()
     {
         if (virtualCam == null)
         {
             Debug.LogError($"No Camera assigned to {name}");
         }
-        fpController = GetComponent<FirstPersonController>();
+
+        if (fpController == null)
+        {
+            Debug.LogError($"No FirstPersonController assigned to {name}");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         float zoomChange;
