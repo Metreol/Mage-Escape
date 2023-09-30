@@ -144,8 +144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoType: 2
   damage: 100
-  range: 20
-  shotDelayInSecs: 0.5
+  range: 10
+  shotDelayInSecs: 1.5
+  ammoStorage: {fileID: 0}
   weaponFlareVFX: {fileID: 5559713182700508514, guid: e35f20bde5489b94bbeebd60d9d62759, type: 3}
   magicCollisionVFX: {fileID: 6932861738656277180, guid: 0bc7ece25a816ea459f25eb396f5a6b4, type: 3}
   particleSystemParent: {fileID: 8949741903929076465}

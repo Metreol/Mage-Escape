@@ -7,11 +7,11 @@ public class AmmoPickup : MonoBehaviour
     [SerializeField] private AmmoType pickupAmmoType;
     [SerializeField] private int pickupSize = 5;
 
-    private void OnTriggerEnter(Collider triggerObject)
+    private void OnTriggerEnter(Collider triggerCollider)
     {
-        if (triggerObject.gameObject.TryGetComponent(out Ammo ammoCarrier))
+        if (triggerCollider.gameObject.TryGetComponent(out Ammo ammoCarrier))
         {
-            ammoCarrier.RestoreAmmo(pickupSize, pickupAmmoType);
+            ammoCarrier.IncreaseAmmo(pickupSize, pickupAmmoType);
             Destroy(gameObject);
         }
     }

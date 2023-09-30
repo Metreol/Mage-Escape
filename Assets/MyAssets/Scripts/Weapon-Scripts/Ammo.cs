@@ -49,7 +49,7 @@ public class Ammo : MonoBehaviour
         slot.ammoCount = slot.ammoCount - ammoCost < 0 ? 0 : slot.ammoCount - ammoCost;
     }
 
-    public void RestoreAmmo(int newAmmoCount, AmmoType type)
+    public void IncreaseAmmo(int newAmmoCount, AmmoType type)
     {
         AmmoSlot slot = GetAmmoSlot(type);
         slot.ammoCount = slot.ammoCount + newAmmoCount >= slot.ammoCapacity
